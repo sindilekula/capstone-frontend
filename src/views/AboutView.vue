@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <h1>ABOUT US</h1>
+    <h1>ABOUT US<span class="text-white ms-2"><i class="fa-solid fa-exclamation"></i><i class="fa-solid fa-exclamation ms-2"></i></span></h1>
     <h5 class="my-5">MEET THE TEAM</h5>
     <div class="team mb-5">
       <div class="row m-3">
@@ -78,18 +78,18 @@
           <div class="details">
             <div class="card text-center">
               <i class="fa-regular fa-globe my-3"></i>
-              <h5>ADDRESS</h5>
+              <h5 class="text">ADDRESS</h5>
               <p>314 Imam Haron Rd, Lansdowne, Cape Town, 7780</p>
             </div>
             <div class="card text-center">
               <i class="fa-regular fa-envelope my-3"></i>
-              <h5>E-MAIL</h5>
+              <h5 class="text">E-MAIL</h5>
               <p>Fivestardesign@gmail.com</p>
               <!-- <p>021 637 7171</p> -->
             </div>
             <div class="card text-center">
               <i class="fa-regular fa-clock my-3"></i>
-              <h5>OFFICE TIME</h5>
+              <h5 class="text">OFFICE TIME</h5>
               <ul>
                 <li>MON - FRI : 09H00 - 18H00</li>
                 <li>SAT - SUN : 09H00 - 17H00</li>
@@ -210,7 +210,8 @@ p.my-3 {
   margin: 20px;
   padding: 15px;
   color: black;
-  background-color: #fff;
+  /* background-color: #fff; */
+   background-color: rgba(0, 0, 0, 0.4);
 }
 
 ul li {
@@ -223,11 +224,15 @@ ul {
 }
 
 i {
-  color: #04bcff;
+  color: #fff;
   font-size: 40px;
 }
 
 .name {
   color: black;
+}
+
+.text {
+   color: #04bcff;
 }
 </style>

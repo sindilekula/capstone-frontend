@@ -29,9 +29,11 @@
         <div class="col-lg-3 text-center my-1">
             <h5>Follow Us</h5>
             <div class="button mt-3">
-                <button type="button" class="btn mx-2"><a href="" class="text-dark"><i class="fa-brands fa-facebook" data-toggle="tooltip" data-placement="top" title="FACEBOOK"></i></a></button>
-                <button type="button" class="btn mx-2"><a href="" class="text-dark"><i class="fa-brands fa-instagram" data-toggle="tooltip" data-placement="top" title="INSTAGRAM"></i></a></button>
-                <button type="button" class="btn mx-2"><a href="" class="text-dark"><i class="fa-brands fa-youtube" data-toggle="tooltip" data-placement="top" title="YOUTUBE"></i></a></button>
+                <button type="button" class="btn mx-2"><a target="_blank" href="https://i.postimg.cc/NfgzcjKH/zeoob-com-ubnt8w32r2-photo.png" class="text-dark"><i class="fa-brands fa-facebook" data-toggle="tooltip" data-placement="top" title="FACEBOOK"></i></a></button>
+                <button type="button" class="btn mx-2"><a target="_blank" href="https://i.postimg.cc/HkWnXXVk/zeoob-com-ohgmj68bz5-photo.png" class="text-dark"><i class="fa-brands fa-instagram" data-toggle="tooltip" data-placement="top" title="INSTAGRAM"></i></a></button>
+                <button type="button" class="btn mx-2"><a target="_blank" href="https://i.postimg.cc/TwVD2GKy/zeoob-com-62x0ffum62-photo.png" class="text-dark"><i class="fa-brands fa-twitter" data-toggle="tooltip" data-placement="top" title="TWITTER"></i></a></button>
+                <button type="button" class="btn mx-2"><a target="_blank" href="https://i.postimg.cc/FR26jypd/zeoob-com-0ne6s98dxa-photo.png" class="text-dark"><i class="fa-brands fa-tiktok" data-toggle="tooltip" data-placement="top" title="TIKTOK"></i></a></button>
+                <!-- <button type="button" class="btn mx-2"><a href='https://postimg.cc/7GnX4Tpw' target='_blank'><img src='https://i.postimg.cc/7GnX4Tpw/zeoob-com-0ne6s98dxa-photo.png' border='0' alt='zeoob-com-0ne6s98dxa-photo'/></a></button> -->
             </div>
         </div>
         <div class="Copyright">

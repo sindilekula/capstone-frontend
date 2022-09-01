@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
-        <h1>CONTACT US</h1>
-        <div class="row m-3">
+        <h1>CONTACT US<span class="text-white ms-2"><i class="fa-solid fa-exclamation"></i><i class="fa-solid fa-exclamation ms-2"></i></span></h1>
+        <div class="row my-5">
             <div class="col-lg-4 p-2">
                 <div class="">
                     <img src="../assets/phone-removebg-preview.png" alt="" class="img-fluid">
@@ -11,19 +11,19 @@
                 <form target="_blank" action="https://formspree.io/f/xqknwllo" method="POST" class="row">
                     <div class="col-md-6 p-2">
                         <label for="inputFirst" class="form-label">FIRST NAME</label>
-                        <input type="text" name="first" class="form-control p-2" id="inputFirst" placeholder="Type here..." required>
+                        <input type="text" name="first" class="form-control p-2" id="inputFirst" placeholder="Type your name here..." required>
                     </div>
                     <div class="col-md-6 p-2">
                         <label for="inputLast" class="form-label">LAST NAME</label>
-                        <input type="text" name="last" class="form-control p-2" id="inputLast" placeholder="Type here..." required>
+                        <input type="text" name="last" class="form-control p-2" id="inputLast" placeholder="Type your surname here..." required>
                     </div>
                     <div class="col-md-6 p-2">
                         <label for="inputEmail4" class="form-label">EMAIL ADDRESS</label>
-                        <input type="email" name="email" class="form-control p-2" id="inputEmail4" placeholder="Type here..." required>
+                        <input type="email" name="email" class="form-control p-2" id="inputEmail4" placeholder="Type your email address here..." required>
                     </div>
                     <div class="col-md-6 p-2">
                         <label for="inputPhone" class="form-label">PHONE NUMBER</label>
-                        <input type="text" name="phone" class="form-control p-2" id="inputPhone" placeholder="Type here..." required>
+                        <input type="text" name="phone" class="form-control p-2" id="inputPhone" placeholder="Type your phone number here..." required>
                     </div>
                     <div class="col-12 p-2">
                         <label for="inputSubject" class="form-label">SUBJECT</label>
@@ -94,10 +94,10 @@ img {
     object-fit: cover;
 }
 
-i {
+/* i {
     color: crimson;
     font-size: 40px;
-}
+} */
 
 form {
     margin: 20px;
@@ -116,6 +116,11 @@ form {
     background-color: black;
     border-color: #fff;
     width: 200px;
+}
+
+button.btn:hover {
+    background-color: #fff;
+    color: black; 
 }
 
 @media screen and (max-width: 470px) {

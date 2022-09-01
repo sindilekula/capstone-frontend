@@ -1,18 +1,20 @@
 <template>
   <div class="container-fluid">
-    <h1>Products</h1>
-    <div class="functions mt-3">
+    <h1>PRODUCTS<span class="text-white ms-2"><i class="fa-solid fa-exclamation"></i><i class="fa-solid fa-exclamation ms-2"></i></span></h1>
+    <div class="functions my-5">
             <button class="btn ms-2" @click="sortProducts">
                 SORT BY PRICE
             </button>
             <input class="ms-3 my-2" type="text" v-model="search" placeholder="Search" />
             <select v-model="category" class="ms-3">
                 <option value="all">All</option>
-                <option value="adidas">Adidas</option>
-                <option value="nike">Nike</option>
-                <option value="puma">Puma</option>
-                <option value="vans">Vans</option>
-                <option value="jordan">Jordan</option>
+                <option value="bedding">Bedding</option>
+                <option value="carpet">Carpet</option>
+                <option value="mirror">Mirror</option>
+                <option value="shelf">Shelf</option>
+                <option value="headboard">Headboard</option>
+                <option value="lamp">Lamp</option>
+                <option value="table">Table</option>
             </select>
             <button class="btn ms-3 my-2" @click="sortProduct">
                 SORT BY NAME

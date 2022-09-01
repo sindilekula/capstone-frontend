@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
-    <h1>Profile Page</h1>
-    <div class="row m-4">
+    <h1>MY PROFILE<span class="text-white ms-2"><i class="fa-solid fa-exclamation"></i><i class="fa-solid fa-exclamation ms-2"></i></span></h1>
+    <div class="row my-5 mx-4">
       <div class="col-lg-5 p-3 my-2">
         <div class="img">
           <img src="../assets/profile.png" alt="" />
@@ -64,6 +64,10 @@ export default {
   color: black;
   text-shadow: 2px 3px 4px white;
 }
+
+/* .row {
+  width: 1350px;
+} */
 
 .col-lg-5,
 .col-lg-7 {

@@ -82,7 +82,11 @@ img {
 a:active,
 a:focus {
   text-decoration: underline;
-  color: #04bcff !important;
+  color: #fff !important;
+}
+
+a.router-link-active.router-link-exact-active.nav-link.active.text-light {
+  color: #fff !important;
 }
 
 /* .collapse {

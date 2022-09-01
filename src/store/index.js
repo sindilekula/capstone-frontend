@@ -258,7 +258,7 @@ export default createStore({
         size,
         description,
       } = product;
-      fetch(`${api}/products/` + id, {
+      fetch(`${api}/products/${id}`, {
         method: "PUT",
         body: JSON.stringify({
           name: name,

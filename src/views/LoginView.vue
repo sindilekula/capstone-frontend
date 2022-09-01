@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-     <h1>LOGIN</h1>
+     <h1>LOGIN<span class="text-white ms-2"><i class="fa-solid fa-exclamation"></i><i class="fa-solid fa-exclamation ms-2"></i></span></h1>
      <div class="output mt-5">
         <form target="_blank" action="https://formspree.io/f/xqknwllo" method="POST" class="row">
             <div class="col-md-12 p-2">

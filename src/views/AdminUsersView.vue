@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid">
-        <h1>WELCOME ADMIN</h1>
+        <h1>WELCOME ADMIN<span class="text-white ms-2"><i class="fa-solid fa-exclamation"><i class="fa-solid fa-exclamation ms-2"></i></i></span></h1>
         <div class="admin my-5">
             <router-link href="" to="/adminProduct">
                 <button type="button" class="btn btn-lg">PRODUCT ADMIN</button>
@@ -15,6 +15,7 @@
 					<th scope="col">PHONE NUMBER</th>
                     <th scope="col">BIO</th>
                     <th scope="col">ROLE</th>
+                    <th scope="col">DELETE</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -64,7 +65,7 @@ export default {
 }
 
 table {
-    width: 100%;
+    width: 1450px;
     padding: 15px;
 }
 

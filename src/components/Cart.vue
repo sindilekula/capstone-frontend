@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid">
-        <h1>My Cart</h1>
+        <h1>SHOPPING CART<span class="text-white ms-2"><i class="fa-solid fa-exclamation"></i><i class="fa-solid fa-exclamation ms-2"></i></span></h1>
         <div class="row">
             <div class="col-lg-8">
                 <div class="box">
@@ -135,7 +135,7 @@ button.btn {
 }
 
 button.btn:hover {
-   background-color: #fff;
+   background-color: #04bcff;;
   color: black;
 }
 
