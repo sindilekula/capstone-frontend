@@ -6,7 +6,7 @@
                 SORT BY PRICE
             </button>
             <input class="ms-3 my-2" type="text" v-model="search" placeholder="Search" />
-            <select v-model="brand" class="ms-3">
+            <select v-model="category" class="ms-3">
                 <option value="all">All</option>
                 <option value="adidas">Adidas</option>
                 <option value="nike">Nike</option>

@@ -29,7 +29,7 @@
                     <h5>CART SUMMARY</h5>
                     <div class="cart-details">
                         <div class="row my-3">
-                            <p>Subtotal:</p>
+                            <p>Total Amount:</p>
                             <p>Discount:</p>
                             <p>Shipping:</p>
                         </div>

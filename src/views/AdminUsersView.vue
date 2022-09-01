@@ -1,33 +1,11 @@
 <template>
-  <h1>ADMIN PAGE</h1>
-  <div class="container-fluid">
-        <!-- <td><CreateModal :product="product" /></td> -->
-		<table>
-			<thead>
-				<tr>
-					<th scope="col">IMAGE</th>
-					<th scope="col">NAME</th>
-					<th scope="col">CATEGORY</th>
-					<th scope="col">PRICE</th>
-                    <th scope="col">COLOR</th>
-                    <th scope="col">SIZE</th>
-                    <th scope="col">DESCRIPTION</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr v-for="product of products" :key="product.id">
-					<td scope="row"><img v-bind:src="product.image" alt="" /></td>
-					<td>{{ product.name }}</td>
-					<td>{{ product.category }}</td>
-					<td>{{ product.price }}</td>
-                    <td>{{ product.color }}</td>
-                    <td>{{ product.size }}</td>
-                    <td class="desc">{{ product.description }}</td>
-					<td><button class="btn" @click="deleteProduct(product.product_id)"><i class="fa-solid fa-trash"></i><span class="ms-2">Delete</span></button><UpdateModal :product="product" /></td>
-				</tr>
-			</tbody>
-		</table>
-
+    <div class="container-fluid">
+        <h1>WELCOME ADMIN</h1>
+        <div class="admin my-5">
+            <router-link href="" to="/adminProduct">
+                <button type="button" class="btn btn-lg">PRODUCT ADMIN</button>
+            </router-link>
+        </div>
         <table>
 			<thead>
 				<tr>
@@ -48,33 +26,29 @@
                     <td>{{ user.phone }}</td>
                     <td>{{ user.bio }}</td>
                     <td>{{ user.role }}</td>
-					<td><button class="btn" @click="deleteProduct(product.product_id)"><i class="fa-solid fa-trash"></i><span class="ms-2">Delete</span></button><UpdateModal :product="product" /></td>
+					<td><button class="btn" @click="deleteUser(user.user_id)"><i class="fa-solid fa-trash"></i><span class="ms-2">Delete</span></button><UpdateModal :product="product" /></td>
 				</tr>
 			</tbody>
-		</table>
-	</div>
+	    </table>
+    </div>
 </template>
 
 <script>
 export default {
     mounted() {
-        this.$store.dispatch("getProducts");
         this.$store.dispatch("getUsers");
     },
     computed: {
-        products() {
-            return this.$store.state.products;
-        },
-        user() {
+        users() {
             return this.$store.state.users;
         },
     },
     methods: {
-        deleteProduct(id) {
-            return this.$store.dispatch("deleteProduct", id);
+         deleteUser(id) {
+            return this.$store.dispatch("deleteUser", id);
         },
     },
-}
+};
 </script>
 
 <style scoped>
@@ -83,9 +57,22 @@ export default {
     padding: 10px;
     color: white;
 }
+
+.container-fluid h1 {
+  color: black;
+  text-shadow: 2px 3px 4px white; 
+}
+
 table {
     width: 100%;
     padding: 15px;
+}
+
+.admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 th {
       border: solid 1px white;
@@ -106,7 +93,7 @@ button.btn {
     background-color: black;
     color: #fff;
     min-height: 40px;
-    width: 100px;
+    width: 180px;
     padding: 5px;
     text-align: center;
 }

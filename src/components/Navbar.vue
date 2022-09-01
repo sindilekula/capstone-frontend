@@ -27,7 +27,7 @@
             <router-link class="nav-link text-dark" href="#" to="/cart">Cart</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link text-dark" href="#" to="/admin">Admin</router-link>
+            <router-link class="nav-link text-dark" href="#" to="/adminProduct">Admin</router-link>
           </li>
         </div>
         <div v-else class="d-flex">
@@ -82,7 +82,7 @@ img {
 a:active,
 a:focus {
   text-decoration: underline;
-  color: #fff!important;
+  color: #04bcff !important;
 }
 
 /* .collapse {

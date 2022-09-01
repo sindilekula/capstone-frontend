@@ -9,6 +9,7 @@ export default createStore({
     product: null,
     products: null,
     user: null,
+    users: null,
     token: null,
     asc: true,
     cart: [],
@@ -20,6 +21,9 @@ export default createStore({
     },
     setProduct(state, product) {
       state.product = product;
+    },
+    setUsers(state, users) {
+      state.users = users;
     },
     setUser(state, user) {
       state.user = user;
@@ -236,13 +240,14 @@ export default createStore({
 
     // DELETE PRODUCT USING ID
     deleteProduct: async (context, id) => {
-      fetch(`${api}/products/` + id, {
+      fetch(`${api}/products/${id}`, {
         method: "DELETE",
       })
       .then((response) => response.json())
       .then(() => context.dispatch("getProducts"));
     },
 
+    
     // UPDATE PRODUCT USING ID
     updateProduct: async (context, product) => {
       const {
@@ -267,8 +272,17 @@ export default createStore({
           "Content-type": "application/json; charset=UTF-8",
         },
       })
-        .then((response) => response.json())
-        .then((json) => context.commit("setProduct", json));
+      .then((response) => response.json())
+      .then((json) => context.commit("setProduct", json));
+    },
+
+    // DELETE USER USING ID
+    deleteUser: async (context, id) => {
+      fetch(`${api}/users/` + id, {
+        method: "DELETE",
+      })
+      .then((response) => response.json())
+      .then(() => context.dispatch("getUser"));
     },
   },
   modules: {},

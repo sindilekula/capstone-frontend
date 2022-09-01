@@ -71,7 +71,7 @@ button {
 }
 
 button:hover {
-    background-color: crimson;
+    background-color: #04bcff;
     border-radius: 50%;
 }
 

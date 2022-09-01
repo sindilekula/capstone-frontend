@@ -104,7 +104,7 @@ button.btn:hover {
 }
 
 
-@media only screen and (max-width: 1285px) {
+@media only screen and (max-width: 1290px) {
   .buttons{
     display: flex;
     flex-direction: column;
