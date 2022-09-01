@@ -111,6 +111,7 @@ export default createStore({
           //   name: "products",
         });
     },
+
     // REGISTER USER
     Register: async (context, payload) => {
       fetch(`${api}/users/register`, {
@@ -135,6 +136,7 @@ export default createStore({
         alert("Registration was successful");
     },
 
+    // GET ALL PRODUCTS
     getProducts: async (context) => {
       fetch(`${api}/products`)
         .then((res) => res.json())
@@ -157,7 +159,23 @@ export default createStore({
           console.log(product), context.commit("setProduct", product);
         });
     },
-    // GET USER
+
+    // GET ALL USERS
+    getUsers: async (context) => {
+      fetch(`${api}/users`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.length === 0) {
+            console.log(data);
+          } else {
+            console.log(data);
+            context.commit("setUsers", data);
+            // console.log(data);
+          }
+        });
+    },
+
+    // GET USER USING ID
     getUser: async (context, id) => {
       fetch(`${api}/users/${id}`)
         .then((res) => res.json())
@@ -179,11 +197,13 @@ export default createStore({
           }
         });
     },
+
     // ADD PRODUCT TO CART
     addToCart: async (context, id) => {
       console.log(id);
       alert("ADDED PRODUCT TO CART");
     },
+
     // DELETE PRODUCT FROM CART
     deleteFromCart: async (context, id) => {
       const newCart = context.state.cart.filter(
@@ -199,6 +219,56 @@ export default createStore({
       );
       context.commit("clearCart", emptyCart);
       alert("ORDER SUCCESSFULLY PLACED");
+    },
+
+    // ADDING A PRODUCT
+    addProduct: async (context, product) => {
+      fetch(`${api}/products`, {
+        method: "POST",
+        body: JSON.stringify(product),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => context.commit("setProduct", json));
+    },
+
+    // DELETE PRODUCT USING ID
+    deleteProduct: async (context, id) => {
+      fetch(`${api}/products/` + id, {
+        method: "DELETE",
+      })
+      .then((response) => response.json())
+      .then(() => context.dispatch("getProducts"));
+    },
+
+    // UPDATE PRODUCT USING ID
+    updateProduct: async (context, product) => {
+      const {
+        name,
+        category,
+        price,
+        color,
+        size,
+        description,
+      } = product;
+      fetch(`${api}/products/` + id, {
+        method: "PUT",
+        body: JSON.stringify({
+          name: name,
+          category: category,
+          price: price,
+          color: color,
+          size: size,
+          description: description,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => context.commit("setProduct", json));
     },
   },
   modules: {},

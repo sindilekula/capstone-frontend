@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid m-3 p-3">
+  <div class="container-fluid">
     <h1>Profile Page</h1>
     <div class="row m-4">
       <div class="col-lg-5 p-3 my-2">

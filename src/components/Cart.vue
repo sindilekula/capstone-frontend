@@ -39,9 +39,9 @@
                             <p>Free shipping</p>
                         </div>
                     </div>
-                    <!-- <router-link to="/checkout"> -->
+                    <div class="">
                         <button type="submit" class="btn btn-lg my-2" @click="deleteCart(product)">Checkout</button>
-                    <!-- </router-link> -->
+                    </div>
                 </div>
             </div>
         </div>

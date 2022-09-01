@@ -9,12 +9,12 @@
       <ul class="navbar-nav">
         <div v-if="user" class="d-flex">
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" href="#" to="/home">Home</router-link>
+            <router-link class="nav-link active" aria-current="page" href="#" to="/">Home</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link text-dark" href="#" to="/about">About</router-link>
           </li>
-          <li class="nav-item">
+           <li class="nav-item">
             <router-link class="nav-link text-dark" href="#" to="/products">Products</router-link>
           </li>
           <li class="nav-item">
@@ -26,14 +26,23 @@
           <li class="nav-item">
             <router-link class="nav-link text-dark" href="#" to="/cart">Cart</router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-dark" href="#" to="/admin">Admin</router-link>
+          </li>
         </div>
         <div v-else class="d-flex">
           <li class="nav-item">
+            <router-link class="nav-link active" aria-current="page" href="#" to="/">Home</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-dark" href="#" to="/products">Products</router-link>
+          </li>
+          <!-- <li class="nav-item">
             <router-link class="nav-link text-dark" href="#" to="/login">Login</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link text-dark" href="#" to="/register">Register</router-link>
-          </li>
+          </li> -->
         </div>
       </ul>
     </div>

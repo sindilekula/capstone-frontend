@@ -67,12 +67,12 @@
       <div class="row">
         <div class="col-lg-8 mt-5">
           <h4 class="my-3">OUR STORY</h4>
-          <p class="my-3">Interior design firm named FIVESTAR DESIGN is located in Cape Town. We design innovative, opulent furniture, lighting, handcrafted items, and modern floor art. Our design is influenced by a timeless classicism and an inquisitive modern aesthetic, with a strong appreciation for natural materials and skilled craftsmanship.</p> 
+          <p class="my-3">Interior design firm named <span class="name">FIVESTAR DESIGN</span> is located in Cape Town. We design innovative, opulent furniture, lighting, handcrafted items, and modern floor art. Our design is influenced by a timeless classicism and an inquisitive modern aesthetic, with a strong appreciation for natural materials and skilled craftsmanship.</p> 
           <p class="my-3">We provide a complete and individualized interior design service in an effort to lead the way in discriminating modern living.</p>
           <p class="my-3">In order to more effectively convey personal and character-driven storylines via the art of design, we constantly explore and hone our style.</p>
           <p class="my-3">It might occasionally be pretty daunting to furnish your house, at least that's how we felt.</p>
-          <p class="my-3">FIVESTAR DESIGN was created to guide people navigate the confusing world of home design. To assist you in making your house come to life, we choose to compile the latest interior design inspirations, tips, and techniques from the huge interior collective.</p>
-          <p class="my-3">In order to design and create limited edition and one-of-a-kind rarefied goods, FIVESTAR DESIGN works closely with South Africa's top artists and craftspeople.</p>
+          <p class="my-3"><span class="name">FIVESTAR DESIGN</span> was created to guide people navigate the confusing world of home design. To assist you in making your house come to life, we choose to compile the latest interior design inspirations, tips, and techniques from the huge interior collective.</p>
+          <p class="my-3">In order to design and create limited edition and one-of-a-kind rarefied goods, <span class="name">FIVESTAR DESIGN</span> works closely with South Africa's top artists and craftspeople.</p>
         </div>
         <div class="col-lg-4 text-center mt-5">
           <div class="details">
@@ -111,8 +111,8 @@
 }
 
 .container-fluid h1 {
-    color: black;
-    text-shadow: 2px 3px 4px white; 
+  color: black;
+  text-shadow: 2px 3px 4px white; 
 }
 
 body {
@@ -129,18 +129,18 @@ body {
 }
 
 .img-container {
-    height: 230px;
-    width: 200px;
-    overflow: hidden;
-    border-radius: 0px 0px 20px 20px;
-    display: inline-block;
+  height: 230px;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 0px 0px 20px 20px;
+  display: inline-block;
 }
 
 .img-container img {
-    transform: skew(0deg, -13deg);
-    height: 250px;
-    margin: -35px 0px 0px 0px;
-    object-fit: cover;
+  transform: skew(0deg, -13deg);
+  height: 250px;
+  margin: -35px 0px 0px 0px;
+  object-fit: cover;
 }
 
 .img-container img:hover {
@@ -149,16 +149,16 @@ body {
 }
 
 .inner-skew {
-    display: inline-block;
-    border-radius: 20px;
-    overflow: hidden;
-    padding: 0px;
-    transform: skew(0deg, 13deg);
-    font-size: 0px;
-    margin: 30px 0px 0px 0px;
-    background: #c8c2c2;
-    height: 250px;
-    width: 160px;
+  display: inline-block;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0px;
+  transform: skew(0deg, 13deg);
+  font-size: 0px;
+  margin: 30px 0px 0px 0px;
+  background: #c8c2c2;
+  height: 250px;
+  width: 160px;
 }
 
 .inner-skew:hover {
@@ -198,32 +198,36 @@ p.my-3 {
 }
 
 .details {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
-    width: 300px;
-    margin: 20px;
-    padding: 15px;
-    color: black;
-    background-color: #fff;
+  width: 300px;
+  margin: 20px;
+  padding: 15px;
+  color: black;
+  background-color: #fff;
 }
 
 ul li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 i {
-    color: #04bcff;
-    font-size: 40px;
+  color: #04bcff;
+  font-size: 40px;
+}
+
+.name {
+  color: black;
 }
 </style>

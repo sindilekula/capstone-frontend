@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid m-3 p-3">
+  <div class="container-fluid">
     <h1>Products</h1>
     <div class="functions mt-3">
             <button class="btn ms-2" @click="sortProducts">
