@@ -226,17 +226,17 @@ export default createStore({
     },
 
     // ADDING A PRODUCT
-    addProduct: async (context, product) => {
-      fetch(`${api}/products`, {
-        method: "POST",
-        body: JSON.stringify(product),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-        .then((response) => response.json())
-        .then((json) => context.commit("setProduct", json));
-    },
+    // addProduct: async (context, product) => {
+    //   fetch(`${api}/products`, {
+    //     method: "POST",
+    //     body: JSON.stringify(product),
+    //     headers: {
+    //       "Content-type": "application/json; charset=UTF-8",
+    //     },
+    //   })
+    //     .then((response) => response.json())
+    //     .then((json) => context.commit("setProduct", json));
+    // },
 
     // DELETE PRODUCT USING ID
     deleteProduct: async (context, id) => {
@@ -276,6 +276,35 @@ export default createStore({
       .then((json) => context.commit("setProduct", json));
     },
 
+    addingProduct: async (context, product) => {
+      const {
+        name,
+        image,
+        category,
+        price,
+        color,
+        size,
+        description,
+      } = product;
+      fetch(`${api}/products`, {
+        method: "POST",
+        body: JSON.stringify({
+          name: name,
+          image: image,
+          category: category,
+          price: price,
+          color: color,
+          size: size,
+          description: description,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+      .then((response) => response.json())
+      .then((json) => context.commit("setProduct", json));
+    },
+
     // DELETE USER USING ID
     deleteUser: async (context, id) => {
       fetch(`${api}/users/` + id, {
@@ -283,6 +312,32 @@ export default createStore({
       })
       .then((response) => response.json())
       .then(() => context.dispatch("getUser"));
+    },
+
+    // UPDATE USER BY ID
+    updateUser: async (context, user) => {
+      const {
+        full_name,
+        email,
+        address,
+        phone,
+        bio,
+      } = user;
+      fetch(`${api}/users/${id}`, {
+        method: "PUT",
+        body: JSON.stringify({
+          full_name: full_name,
+          email: email,
+          address: address,
+          phone: phone,
+          bio: bio,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+      .then((response) => response.json())
+      .then((json) => context.commit("setUser", json));
     },
   },
   modules: {},

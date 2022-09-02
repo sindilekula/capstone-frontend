@@ -1,7 +1,7 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid" >
     <h1>PRODUCTS<span class="text-white ms-2"><i class="fa-solid fa-exclamation"></i><i class="fa-solid fa-exclamation ms-2"></i></span></h1>
-    <div class="functions my-5">
+    <div class="functions my-5" >
             <button class="btn ms-2" @click="sortProducts">
                 SORT BY PRICE
             </button>
@@ -21,8 +21,8 @@
             </button>
     </div>
     <div class="products">
-        <div class="cards" v-for="product in Products" :key="product.product_id">
-            <div class="row">
+        <div class="cards" v-for="product in Products" :key="product.product_id" >
+            <div class="row" v-for="product of filteredProducts" :key="product.product_id" :product="product">
                 <div class="col-6">
                     <img :src="product.image" class="img-fluid" />
                 </div>
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <!-- <ProductCard v-for="product of filteredProducts" :key="product.product_id" :product="product" /> -->
+        <div v-for="product of filteredProducts" :key="product.product_id" :product="product"></div>
     </div>
   </div>
 </template>
@@ -63,9 +63,30 @@ export default {
         Products() {
             return this.$store.state.products;
         },
+        filteredProducts() {
+            return this.$store.state.products?.filter((product) => {
+                let isMatch = true;
+                if (!product.name?.toLowerCase().includes(this.search.toLowerCase()))
+                isMatch = false;
+                if (this.category !== "all" && product.category !== this.category) isMatch = false;
+                return isMatch;
+            });
+        },
     },
     mounted() {
         this.$store.dispatch("getProducts");
+    },
+       data() {
+        return {
+            search: "",
+            category: "all",
+            name: "",
+            image: "",
+            price: "",
+            color: "",
+            size: "",
+            description: "",
+        };
     },
     methods: {
         getProduct() {
