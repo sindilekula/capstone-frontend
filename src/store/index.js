@@ -230,17 +230,17 @@ export default createStore({
     },
 
     // ADDING A PRODUCT
-    // addProduct: async (context, product) => {
-    //   fetch(`${api}/products`, {
-    //     method: "POST",
-    //     body: JSON.stringify(product),
-    //     headers: {
-    //       "Content-type": "application/json; charset=UTF-8",
-    //     },
-    //   })
-    //     .then((response) => response.json())
-    //     .then((json) => context.commit("setProduct", json));
-    // },
+    addProduct: async (context, product) => {
+      fetch(`${api}/products`, {
+        method: "POST",
+        body: JSON.stringify(product),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => context.commit("setProduct", json));
+    },
 
     // DELETE PRODUCT USING ID
     deleteProduct: async (context, id) => {

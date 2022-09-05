@@ -47,6 +47,11 @@ export default {
                 return isMatch;
             });
         },
+    },
+    methods: {
+        addToCart(item) {
+            this.$store.commit("updateCart", item);
+        },
     }
 }
 </script>

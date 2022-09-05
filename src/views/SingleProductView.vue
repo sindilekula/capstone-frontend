@@ -1,6 +1,11 @@
 <template>
   <div v-if="product" class="container-fluid">
-    <div v-for="item in product" :key="item.id" class="cards mb-5">
+    <router-link to="/products">
+        <button type="button" class="btn btn-lg ms-3 my-2">
+            GO BACK
+        </button>
+    </router-link>
+    <div v-for="item in product" :key="item.id" class="cards mb-5 mt-5">
         <div class="row">
             <div class="image">
                 <img :src="item.image" class="img-fluid" />

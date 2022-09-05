@@ -41,7 +41,7 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form @submit.prevent="addingProduct()">
+              <form @submit.prevent="addProduct()">
                 <div class="name form-floating">
                   <input
                     type="text"
@@ -345,7 +345,7 @@ export default {
       return this.$store.dispatch("updateProduct", id);
     },
 
-    addingProduct() {
+    addProduct() {
       const product = {
         name: this.name,
         image: this.image,
@@ -355,7 +355,7 @@ export default {
         size: this.size,
         description: this.description,
       };
-      this.$store.dispatch("addingProduct", product);
+      this.$store.dispatch("addProduct", product);
     },
     //  addingProduct() {
     //     return this.$store.dispatch("addingProduct");
