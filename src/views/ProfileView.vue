@@ -7,8 +7,9 @@
           <img src="../assets/profile.png" alt="" />
         </div>
         <div class="button">
+          <button type="button" class="btn btn-primary ms-2 my-2" @click="Logout()">LOGOUT</button>
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn btn-primary ms-2 my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <i class="fa-solid fa-pen"></i><span class="ms-2">EDIT USER</span>
           </button>
           <!-- Modal -->
@@ -57,15 +58,15 @@
         <h4>Account Details</h4>
         <div class="row">
           <div class="col-lg-6">
-            <p>FULL NAME:<span class="ms-2">{{ user.full_name }}</span></p>
-            <p>ADDRESS:<span class="ms-2">{{ user.address }}</span></p>
+            <p>FULL NAME:<span class="user ms-2">{{ user.full_name }}</span></p>
+            <p>ADDRESS:<span class="user ms-2">{{ user.address }}</span></p>
           </div>
           <div class="col-lg-6">
             <p>EMAIL:<span class="ms-2">{{ user.email}}</span></p>
-            <p>PHONE NUMBER:<span class="ms-2">{{ user.phone }}</span></p>
+            <p>PHONE NUMBER:<span class="user ms-2">{{ user.phone }}</span></p>
           </div>
           <div class="col-lg-12">
-            <p>BIO:<span class="ms-2">{{ user.bio }}</span></p>
+            <p>BIO:<span class="user ms-2">{{ user.bio }}</span></p>
           </div>
         </div>
       </div>
@@ -95,6 +96,10 @@ export default {
     updateUser(id) {
       return this.$store.dispatch("updateUser", id);
     },
+    Logout() {
+      this.$store.commit("Logout");
+      this.$router.push("/");
+    }
   },
   // mounted() {
   //   this.$store.dispatch("getUser", this.$route.params.id);
@@ -193,7 +198,7 @@ p {
   color: black;
 }
 
-span.ms-2 {
+span.user {
   color: #fff;
 }
 

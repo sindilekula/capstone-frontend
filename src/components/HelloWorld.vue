@@ -8,7 +8,14 @@
           <p class="text-muted mt-2">We create elegant, modern living spaces, each a unique story tailored to the client's personal requirements.</p>
         </header>
         <buttons> 
-          <div class="buttons d-flex justify-content-center mt-5 mb-5">
+          <div class="products" v-if="user">
+            <router-link to="/products">
+              <button type="button" class="btn btn-lg ms-3 my-2">
+                SHOP NOW
+              </button>
+            </router-link>
+          </div>
+          <div class="buttons d-flex justify-content-center mt-5 mb-5" v-else>
             <router-link to="/login">
               <button type="button" class="btn btn-lg ms-3 my-2">
                 LOGIN
@@ -34,7 +41,12 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
 }
 </script>
 

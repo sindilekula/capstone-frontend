@@ -73,6 +73,9 @@ export default createStore({
       }
       state.asc = !state.asc;
     },
+    Logout(state){
+      (state.user = ""), (state.token = "")
+    },
   },
   actions: {
     // LOGIN USER
@@ -104,10 +107,11 @@ export default createStore({
               .then((res) => res.json())
               .then((data) => {
                 context.commit("setUser", data.user);
-                alert(data.user.email);
-                router.push({
-                  name: "products",
-                });
+                alert("YOU ARE SUCCESSFULLY LOGGED IN");
+                router.push("/");
+                // router.push({
+                //   name: "products",
+                // });
               });
           }
           //   });
