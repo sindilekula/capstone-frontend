@@ -6,6 +6,52 @@
         <div class="img">
           <img src="../assets/profile.png" alt="" />
         </div>
+        <div class="button">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fa-solid fa-pen"></i><span class="ms-2">EDIT USER</span>
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-dark" id="exampleModalLabel">EDIT USER</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form @submit.prevent="updateUser(user.user_id)">
+                    <div class="fullname form-floating">
+                      <input type="text" class="form-control mb-2" id="floatingFullName" placeholder="FULL NAME" v-model="user.full_name"/>
+                      <label for="floatingFullName">FULL NAME</label>
+                    </div>
+                    <div class="email form-floating">
+                      <input type="text" class="form-control mb-2" id="floatingEmail" placeholder="EMAIL" v-model="user.email"/>
+                      <label for="floatingEmail">EMAIL</label>
+                    </div>
+                    <div class="address form-floating">
+                      <input type="text" class="form-control mb-2" id="floatingAddress" placeholder="ADDRESS" v-model="user.address"/>
+                      <label for="floatingAddress">ADDRESS</label>
+                    </div>
+                    <div class="phone form-floating">
+                      <input type="text" class="form-control mb-2" id="floatingPhone" placeholder="PHONE NUMBER" v-model="user.phone"/>
+                      <label for="floatingPhone">PHONE NUMBER</label>
+                    </div>
+                    <div class="bio form-floating">
+                      <input type="text" class="form-control mb-2" id="floatingBio" placeholder="BIO" v-model="user.bio"/>
+                      <label for="floatingBio">BIO</label>
+                    </div>
+                    <button type="submit" class="button">Save</button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="button btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="button btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col-lg-7 p-3 my-2">
         <h4>Account Details</h4>
@@ -41,6 +87,14 @@ export default {
     user() {
       return this.$store.state.user;
     },
+    users() {
+      return this.$store.state.users;
+    },
+  },
+  methods: {
+    updateUser(id) {
+      return this.$store.dispatch("updateUser", id);
+    },
   },
   // mounted() {
   //   this.$store.dispatch("getUser", this.$route.params.id);
@@ -65,9 +119,11 @@ export default {
   text-shadow: 2px 3px 4px white;
 }
 
-/* .row {
-  width: 1350px;
-} */
+.col-lg-5 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .col-lg-5,
 .col-lg-7 {
@@ -98,6 +154,48 @@ export default {
   border-radius: 10px;
 }
 
+button.btn {
+    font-size: 16px;
+    background-color: black;
+    color: #fff;
+    min-height: 40px;
+    width: 180px;
+    padding: 5px;
+    text-align: center;
+}
+
+button.btn:hover {
+    background-color: #fff;
+    color: black; 
+}
+
+button.button {
+    font-size: 16px;
+    background-color: black;
+    color: #fff;
+    min-height: 40px;
+    width: 150px;
+    padding: 5px;
+    text-align: center;
+}
+
+button.button:hover {
+    background-color: #04bcff;
+    color: black; 
+}
+
+label {
+    color: #04bcff;
+    margin-bottom: 20px;
+}
+
+p {
+  color: black;
+}
+
+span.ms-2 {
+  color: #fff;
+}
 
 @media screen and (max-width: 560px) {
 

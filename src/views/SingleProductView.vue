@@ -8,7 +8,7 @@
             <div class="details mt-5">
                 <h5>{{ item.name }}</h5>
                 <p class="py-2"><span>Category</span>: {{ item.category }}</p>
-                <p class="py-2"><span>Price</span>: {{ item.price }}</p>
+                <p class="py-2"><span>Price</span>: R{{ item.price }}</p>
                 <p class="py-2"><span>Color</span>: {{ item.color }}</p>
                 <p class="py-2"><span>Size</span>: {{ item.size }}</p>
                 <p class="py-2"><span>Description</span>: {{ item.description }}</p>

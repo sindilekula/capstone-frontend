@@ -17,7 +17,7 @@
         data-bs-toggle="modal"
         data-bs-target="#addingModal"
       >
-        <i class="fa-solid fa-circle-plus"></i><span class="ms-2">ADD</span>
+        <i class="fa-solid fa-circle-plus"></i><span class="ms-2">ADD PRODUCT</span>
       </button>
       <!-- Modal -->
       <div

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid" >
+  <div class="container-fluid">
     <h1>PRODUCTS<span class="text-white ms-2"><i class="fa-solid fa-exclamation"></i><i class="fa-solid fa-exclamation ms-2"></i></span></h1>
     <div class="functions my-5" >
             <button class="btn ms-2" @click="sortProducts">
@@ -20,16 +20,16 @@
                 SORT BY NAME
             </button>
     </div>
-    <div class="products">
+    <!-- <div class="products">
         <div class="cards" v-for="product in Products" :key="product.product_id" >
-            <div class="row" v-for="product of filteredProducts" :key="product.product_id" :product="product">
+            <div class="row">
                 <div class="col-6">
                     <img :src="product.image" class="img-fluid" />
                 </div>
                 <div class="col-6">
                     <h5>{{ product.name }}</h5>
                     <p class="py-2"><span>Category</span>: {{ product.category }}</p>
-                    <p class="py-2"><span>Price</span>: {{ product.price }}</p>
+                    <p class="py-2"><span>Price</span>: R{{ product.price }}</p>
                     <p class="py-2"><span>Color</span>: {{ product.color }}</p>
                     <p class="py-2"><span>Size</span>: {{ product.size }}</p>
                     <p class="py-2"><span>Description</span>: {{ product.description }}</p>
@@ -46,19 +46,20 @@
                 </div>
             </div>
         </div>
-        <div v-for="product of filteredProducts" :key="product.product_id" :product="product"></div>
-    </div>
+    </div> -->
+    <ProductCard v-for="product of filteredProducts" :key="product.product_id" :product="product" />
   </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
-// import ProductCard from '@/components/ProductCard.vue'
+import ProductCard from '@/components/ProductCard.vue'
 export default {
-    // name: 'ProductView',
-    // components: {
-    //     ProductCard,
-    // },
+    props: ["product_id"],
+    name: 'ProductView',
+    components: {
+        ProductCard,
+    },
     computed: {
         Products() {
             return this.$store.state.products;
@@ -117,7 +118,7 @@ export default {
     color: black;
     text-shadow: 2px 3px 4px white; 
 }
-
+/* 
 .col-6 img {
   width: 300px;
   height: 400px;
@@ -168,7 +169,7 @@ export default {
 
 span {
     color: black;
-}
+} */
 
 .buttons {
     display: flex;
