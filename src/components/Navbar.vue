@@ -7,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <div v-if="user" class="d-flex">
+        <div v-if="user" class="nav">
           <li class="nav-item">
             <router-link class="nav-link active" aria-current="page" href="#" to="/">Home</router-link>
           </li>
@@ -30,7 +30,7 @@
             <router-link class="nav-link text-dark" href="#" to="/adminProduct">Admin</router-link>
           </li>
         </div>
-        <div v-else class="d-flex">
+        <div v-else class="start">
           <li class="nav-item">
             <router-link class="nav-link active" aria-current="page" href="#" to="/">Home</router-link>
           </li>
@@ -62,22 +62,22 @@ export default {
 
 <style scoped>
 nav.navbar {
-    display: block;
-    margin: 0 auto;
-    /* background-color: rgba(0, 0, 0, 0.1); */
-    overflow: hidden;
+  display: block;
+  margin: 0 auto;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  overflow: hidden;
 }
 #navbarNav {
-    margin-left: 150px;
+  margin-left: 150px;
 }
 
 img {
-    width: 150px;
-    height: 75px;
-    object-fit: cover;
+  width: 150px;
+  height: 75px;
+  object-fit: cover;
 }
 .d-flex {
-    margin-left: 400px;
+  margin-left: 400px;
 }
 a:active,
 a:focus {
@@ -96,5 +96,34 @@ a.router-link-active.router-link-exact-active.nav-link.active.text-light {
 
 #navbarNav {
   margin: 0;
+  /* text-decoration: underline; */
+  border-bottom: solid 1px #fff;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  margin-left: 400px;
+}
+
+.start {
+  display: flex;
+  margin-left: 400px;
+}
+
+@media screen and (max-width: 991.20px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .start {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
 </style>
