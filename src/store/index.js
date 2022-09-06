@@ -316,6 +316,9 @@ export default createStore({
       })
       .then((response) => response.json())
       .then(() => context.dispatch("getUser"));
+      router.push({
+        name: "home",
+      });
     },
 
     // UPDATE USER BY ID

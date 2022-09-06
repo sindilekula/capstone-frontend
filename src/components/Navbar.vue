@@ -26,7 +26,7 @@
           <li class="nav-item">
             <router-link class="nav-link text-dark" href="#" to="/cart">Cart</router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="user.role === 'admin' ">
             <router-link class="nav-link text-dark" href="#" to="/adminProduct">Admin</router-link>
           </li>
         </div>
@@ -115,6 +115,10 @@ a.router-link-active.router-link-exact-active.nav-link.active.text-light {
   margin-left: 400px;
 }
 
+.admin {
+  margin-left: 400px;
+}
+
 @media screen and (max-width: 991.20px) {
   .nav {
     display: flex;
@@ -122,6 +126,11 @@ a.router-link-active.router-link-exact-active.nav-link.active.text-light {
     margin-left: 150px;
   }
   .start {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+  }
+  .admin {
     display: flex;
     flex-direction: column;
     margin-left: 150px;

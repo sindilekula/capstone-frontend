@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <h1>ABOUT US<span class="text-white ms-2"><i class="fa-solid fa-exclamation"></i><i class="fa-solid fa-exclamation ms-2"></i></span></h1>
-    <h5 class="my-5">MEET THE TEAM</h5>
+    <h5 class="mt-5">MEET THE TEAM</h5>
     <div class="team mb-5">
       <div class="row m-3">
         <div class="col-lg-4">
@@ -126,6 +126,7 @@ body {
   display: inline-block;
   width: 240px;
   text-align: center;
+  margin-top: 30px;
 }
 
 .img-container {

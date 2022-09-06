@@ -2,11 +2,11 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-5 details">
-        <header>
+        <div class="heading">
           <h1>WELCOME TO FIVESTAR DESIGN</h1>
           <h4>A place where you find the best interior designs</h4>
           <p class="text-muted mt-2">We create elegant, modern living spaces, each a unique story tailored to the client's personal requirements.</p>
-        </header>
+        </div>
         <buttons> 
           <div class="products" v-if="user">
             <router-link to="/products">
@@ -128,7 +128,10 @@ button.btn:hover {
       /* height: 600px; */
       position: relative;
       animation: up-down 1.9s infinite ease-in-out alternate;
-    }
+  }
+  h1 {
+    font-size: 40px;
+  }
 
     @keyframes up-down{
     from{

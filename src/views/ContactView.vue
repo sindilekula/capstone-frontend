@@ -90,7 +90,7 @@ export default {
 
 img {
     height: 400px;
-    width: fit-content;
+    width: 400px;
     object-fit: cover;
 }
 
@@ -128,7 +128,9 @@ button.btn:hover {
         width: 300px;
     }
     img {
-        width: 200px;
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
     }
 }
 </style>

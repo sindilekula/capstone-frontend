@@ -207,7 +207,7 @@ select {
     color: black;
     text-shadow: 2px 2px 2px white;
 }
-.cards {
+/* .cards {
     width: 400px;
     height: 600px;
     border: 2px solid black;
@@ -223,8 +223,25 @@ select {
     width: 300px;
     height: 200px;
     object-fit: cover;
+} */
+@media screen and (max-width: 944px) {
+   input {
+        min-width: 400px;
+        padding: 10px;
+    } 
 }
-
+@media screen and (max-width: 644px) {
+   input {
+        min-width: 200px;
+        padding: 10px;
+    } 
+}
+@media screen and (max-width: 483px) {
+   input {
+        min-width: 300px;
+        padding: 10px;
+    } 
+}
 @media screen and (max-width: 600px) {
     .buttons {
         display: flex;

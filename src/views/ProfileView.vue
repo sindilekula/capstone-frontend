@@ -7,6 +7,7 @@
           <img src="../assets/profile.png" alt="" />
         </div>
         <div class="button">
+          <button class="btn" @click="deleteUser(user.user_id)"><i class="fa-solid fa-trash"></i><span class="ms-2">DELETE</span></button>
           <button type="button" class="btn btn-primary ms-2 my-2" @click="Logout()">LOGOUT</button>
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-primary ms-2 my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -99,7 +100,10 @@ export default {
     Logout() {
       this.$store.commit("Logout");
       this.$router.push("/");
-    }
+    },
+    deleteUser(id) {
+      return this.$store.dispatch("deleteUser", id);
+    },
   },
   // mounted() {
   //   this.$store.dispatch("getUser", this.$route.params.id);

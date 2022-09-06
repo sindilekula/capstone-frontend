@@ -454,7 +454,7 @@ label {
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 400px) {
   .admin {
     display: flex;
     flex-direction: column;
