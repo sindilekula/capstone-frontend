@@ -20,7 +20,7 @@
                 SORT BY NAME
             </button>
     </div>
-    <!-- <div class="products">
+    <div class="products">
         <div class="cards" v-for="product in Products" :key="product.product_id" >
             <div class="row">
                 <div class="col-6">
@@ -46,8 +46,8 @@
                 </div>
             </div>
         </div>
-    </div> -->
-    <ProductCard v-for="product of filteredProducts" :key="product.product_id" :product="product" />
+    </div>
+    <!-- <ProductCard v-for="product of filteredProducts" :key="product.product_id" :product="product" /> -->
   </div>
 </template>
 
@@ -56,10 +56,10 @@ import { mapActions, mapState } from "vuex";
 import ProductCard from '@/components/ProductCard.vue'
 export default {
     props: ["product_id"],
-    name: 'ProductView',
-    components: {
-        ProductCard,
-    },
+    // name: 'ProductView',
+    // components: {
+    //     ProductCard,
+    // },
     computed: {
         Products() {
             return this.$store.state.products;
@@ -118,7 +118,7 @@ export default {
     color: black;
     text-shadow: 2px 3px 4px white; 
 }
-/* 
+
 .col-6 img {
   width: 300px;
   height: 400px;
@@ -169,7 +169,7 @@ export default {
 
 span {
     color: black;
-} */
+}
 
 .buttons {
     display: flex;
@@ -207,7 +207,7 @@ select {
     color: black;
     text-shadow: 2px 2px 2px white;
 }
-/* .cards {
+.cards {
     width: 400px;
     height: 600px;
     border: 2px solid black;
@@ -217,13 +217,13 @@ select {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-} */
+} 
 
-/* .cards img {
+.cards img {
     width: 300px;
     height: 200px;
     object-fit: cover;
-} */
+}
 
 @media screen and (max-width: 600px) {
     .buttons {

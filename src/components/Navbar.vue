@@ -119,11 +119,14 @@ a.router-link-active.router-link-exact-active.nav-link.active.text-light {
   .nav {
     display: flex;
     flex-direction: column;
+    margin-left: 150px;
   }
   .start {
     display: flex;
     flex-direction: column;
+    margin-left: 150px;
   }
+
 
 }
 </style>
