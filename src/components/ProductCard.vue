@@ -15,11 +15,11 @@
                     <p class="py-2"><span>Description</span>: {{ product.description }}</p>
                 </div>
                 <div class="buttons mb-2">
-                    <router-link :to="{ name: 'product', params: { id: product.product_id} }">
+                    <!-- <router-link :to="{ name: 'product', params: { id: product.product_id} }">
                     <button class="btn btn-lg ms-2 my-1">
                         VIEW PRODUCT
                     </button>
-                    </router-link>
+                    </router-link> -->
                     <button @click="addToCart(product)" class="btn btn-lg ms-2 my-1">
                         ADD TO CART
                     </button>
@@ -35,23 +35,9 @@
 export default {
     props: ["product"],
     computed: {
-        Products() {
-            return this.$store.state.products;
-        },
-        filteredProducts() {
-            return this.$store.state.products?.filter((product) => {
-                let isMatch = true;
-                if (!product.name?.toLowerCase().includes(this.search.toLowerCase()))
-                isMatch = false;
-                if (this.category !== "all" && product.category !== this.category) isMatch = false;
-                return isMatch;
-            });
-        },
-    },
-    methods: {
-        addToCart(item) {
-            this.$store.commit("updateCart", item);
-        },
+      Products() {
+        return this.$store.state.products;
+      },
     }
 }
 </script>

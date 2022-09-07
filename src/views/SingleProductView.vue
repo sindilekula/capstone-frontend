@@ -25,6 +25,16 @@
             </div>
         </div>
     </div>
+    <div class="container-similar d-flex">
+        <div v-for="product in similarProducts" :key="product.product_id" class="SimilarProducts">
+            <div class="cards">
+                <div class="productDetails">
+                    <img :src="product.image" alt="" />
+                    <p>{{ product.name }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -35,6 +45,13 @@ export default {
         product() {
             return this.$store.state.product;
         },
+        similarProducts() {
+            // console.log(this.$store.state.products);
+            return this.$store.state.products?.filter((product) => {
+                return product?.category === this.product?.category;
+            });
+            
+        },
     },
     methods: {
         addToCart(product) {
@@ -44,6 +61,17 @@ export default {
     mounted() {
         this.$store.dispatch("getProduct", this.$route.params.id);
     },
+    data() {
+    return {
+      category: "",
+      name: "",
+      image: "",
+      price: "",
+      color: "",
+      size: "",
+      description: "",
+    };
+  },
 };
 </script>
 
@@ -113,6 +141,11 @@ button.btn:hover {
 .details h5 {
     color: black;
     text-shadow: 2px 2px 2px white;
+}
+
+.container-similar {
+  /* background-color: white; */
+  height: 300px;
 }
 
 @media screen and (max-width: 556px) {

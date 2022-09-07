@@ -1,5 +1,6 @@
 import router from "@/router";
 import { createStore } from "vuex";
+import createPersistedState from "vuex-persistedstate";
 
 const api = "https://capstone-sindile.herokuapp.com";
 console.log(api);
@@ -230,16 +231,28 @@ export default createStore({
     },
 
     // ADDING A PRODUCT
-    addProduct: async (context, product) => {
+    addProduct: async (context, product,token) => {
+      console.log(token);
       fetch(`${api}/products`, {
         method: "POST",
-        body: JSON.stringify(product),
+        body: JSON.stringify({
+          name: product.name,
+          category: product.category,
+          price: product.price,
+          color: product.color,
+          size: product.size,
+          description: product.description
+        }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
+          "x-auth-token": product.token,
         },
       })
         .then((response) => response.json())
-        .then((json) => context.commit("setProduct", json));
+        .then((productdata) => {
+        console.log(productdata);
+        context.commit("setProducts")
+      });
     },
 
     // DELETE PRODUCT USING ID
@@ -262,7 +275,7 @@ export default createStore({
         size,
         description,
       } = product;
-      fetch(`${api}/products/${id}`, {
+      fetch("https://capstone-sindile.herokuapp.com/products/" + id, {
         method: "PUT",
         body: JSON.stringify({
           name: name,
@@ -277,37 +290,37 @@ export default createStore({
         },
       })
       .then((response) => response.json())
-      .then((json) => context.commit("setProduct", json));
+      .then((product) => context.commit("setProduct", product));
     },
 
-    addingProduct: async (context, product) => {
-      const {
-        name,
-        image,
-        category,
-        price,
-        color,
-        size,
-        description,
-      } = product;
-      fetch(`${api}/products`, {
-        method: "POST",
-        body: JSON.stringify({
-          name: name,
-          image: image,
-          category: category,
-          price: price,
-          color: color,
-          size: size,
-          description: description,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-      .then((response) => response.json())
-      .then((json) => context.commit("setProduct", json));
-    },
+    // addingProduct: async (context, product) => {
+    //   const {
+    //     name,
+    //     image,
+    //     category,
+    //     price,
+    //     color,
+    //     size,
+    //     description,
+    //   } = product;
+    //   fetch(`${api}/products`, {
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //       name: name,
+    //       image: image,
+    //       category: category,
+    //       price: price,
+    //       color: color,
+    //       size: size,
+    //       description: description,
+    //     }),
+    //     headers: {
+    //       "Content-type": "application/json; charset=UTF-8",
+    //     },
+    //   })
+    //   .then((response) => response.json())
+    //   .then((json) => context.commit("setProduct", json));
+    // },
 
     // DELETE USER USING ID
     deleteUser: async (context, id) => {
@@ -348,4 +361,5 @@ export default createStore({
     },
   },
   modules: {},
+  plugins: [createPersistedState()]
 });

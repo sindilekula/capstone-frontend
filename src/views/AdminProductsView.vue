@@ -41,7 +41,7 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form @submit.prevent="addProduct()">
+              <form @submit.prevent="addProduct(user.user_id)">
                 <div class="name form-floating">
                   <input
                     type="text"
@@ -326,6 +326,12 @@ export default {
     product() {
       return this.$store.state.product;
     },
+    user() {
+      return this.$store.state.user;
+    },
+    token() {
+      return this.$store.state.token;
+    },
     filteredProducts() {
       return this.$store.state.products?.filter((product) => {
         let isMatch = true;
@@ -345,21 +351,30 @@ export default {
       return this.$store.dispatch("updateProduct", id);
     },
 
-    addProduct() {
-      const product = {
-        name: this.name,
-        image: this.image,
-        category: this.category,
-        price: this.price,
-        color: this.color,
-        size: this.size,
-        description: this.description,
-      };
-      this.$store.dispatch("addProduct", product);
-    },
-    //  addingProduct() {
-    //     return this.$store.dispatch("addingProduct");
+    // addProduct() {
+    //   const product = {
+    //     name: this.name,
+    //     image: this.image,
+    //     category: this.category,
+    //     price: this.price,
+    //     color: this.color,
+    //     size: this.size,
+    //     description: this.description,
+    //   };
+    //   this.$store.dispatch("addProduct", product);
     // },
+     addProduct() {
+        this.$store.dispatch("addProduct", {
+          name: this.name,
+          image: this.image,
+          category: this.category,
+          price: this.price,
+          color: this.color,
+          size: this.size,
+          description: this.description,
+          token:this.token
+        });
+    },
   },
 };
 </script>
