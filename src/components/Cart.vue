@@ -29,9 +29,9 @@
                     <h5>CART SUMMARY</h5>
                     <div class="cart-details">
                         <div class="row my-3">
-                            <p>Total Amount:</p>
-                            <p>Discount:</p>
-                            <p>Shipping:</p>
+                            <p class="details">Total Amount:</p>
+                            <p class="details">Discount:</p>
+                            <p class="details">Shipping:</p>
                         </div>
                         <div class="row my-3">
                             <p>R{{ calculatePrice }}</p>
@@ -97,6 +97,14 @@ img {
     object-fit: cover;
 }
 
+p.details {
+    color: #04bcff;
+}
+
+span.ms-5 {
+    color: #04bcff;
+}
+
 .cards {
     display: flex;
     flex-direction: row;
@@ -153,5 +161,15 @@ button.btn:hover {
         justify-content: center;
         align-items: center;
     }
+    img {
+        width: 250px;
+        height: 150px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    .cart-content {
+        margin-top: 10px;
+    }
+
 }
 </style>

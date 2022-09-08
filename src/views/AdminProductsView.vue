@@ -176,7 +176,7 @@
               type="button"
               class="btn btn-primary"
               data-bs-toggle="modal"
-              :data-bs-target="`#modal${index}`"
+              data-bs-target="#modal"
             >
               <i class="fa-solid fa-pen"></i><span class="ms-2">EDIT</span>
             </button>
@@ -184,12 +184,10 @@
             <!-- Modal -->
             <div
               class="modal fade"
-              :id="`modal${index}`"
+              id="modal"
               tabindex="-1"
               aria-labelledby="exampleModalLabel"
               aria-hidden="true"
-              v-for="(product, index) of products"
-              :key="index"
             >
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -215,6 +213,16 @@
                           v-model="product.name"
                         />
                         <label for="floatingName">NAME</label>
+                      </div>
+                      <div class="image form-floating">
+                        <input
+                          type="text"
+                          class="form-control mb-2"
+                          id="floatingImage"
+                          placeholder="IMAGE"
+                          v-model="product.image"
+                        />
+                        <label for="floatingImage">IMAGE</label>
                       </div>
                       <div class="color form-floating">
                         <input
@@ -310,7 +318,7 @@ export default {
   data() {
     return {
       search: "",
-      category: "all",
+      category: "",
       name: "",
       image: "",
       price: "",
@@ -348,7 +356,15 @@ export default {
       return this.$store.dispatch("deleteProduct", id);
     },
     updateProduct(id) {
-      return this.$store.dispatch("updateProduct", id);
+      this.$store.dispatch("updateProduct", {
+        name: this.name,
+        image: this.image,
+        category: this.category,
+        price: this.price,
+        color: this.color,
+        size: this.size,
+        description: this.description
+      }, id);
     },
 
     // addProduct() {
@@ -394,10 +410,12 @@ export default {
 table {
   width: 1450px;
   padding: 15px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 th {
   border: solid 1px white;
+  background-color: #04bcff;
   color: black;
 }
 
@@ -458,6 +476,7 @@ label {
   color: #04bcff;
   margin-bottom: 20px;
 }
+
 
 @media screen and (max-width: 800px) {
   img {

@@ -1,9 +1,7 @@
 <template>
   <div v-if="product" class="container-fluid">
     <router-link to="/products">
-        <button type="button" class="btn btn-lg ms-3 my-2">
-            GO BACK
-        </button>
+        <button type="button" class="btn btn-lg ms-3 my-2"><i class="fa-solid fa-arrow-left"></i><span  class="ms-2">GO BACK</span></button>
     </router-link>
     <div v-for="item in product" :key="item.id" class="cards mb-5 mt-5">
         <div class="row">
@@ -12,11 +10,11 @@
             </div>
             <div class="details mt-5">
                 <h5>{{ item.name }}</h5>
-                <p class="py-2"><span>Category</span>: {{ item.category }}</p>
-                <p class="py-2"><span>Price</span>: R{{ item.price }}</p>
-                <p class="py-2"><span>Color</span>: {{ item.color }}</p>
-                <p class="py-2"><span>Size</span>: {{ item.size }}</p>
-                <p class="py-2"><span>Description</span>: {{ item.description }}</p>
+                <p class="py-2"><span class="details">Category</span>: {{ item.category }}</p>
+                <p class="py-2"><span class="details">Price</span>: R{{ item.price }}</p>
+                <p class="py-2"><span class="details">Color</span>: {{ item.color }}</p>
+                <p class="py-2"><span class="details">Size</span>: {{ item.size }}</p>
+                <p class="py-2"><span class="details">Description</span>: {{ item.description }}</p>
             </div>
             <div class="buttons mb-2">
                 <button @click="addToCart(item)" class="btn btn-lg ms-2 my-1">
@@ -119,7 +117,7 @@ export default {
   opacity:1;
 }
 
-span {
+span.details {
     color: black;
 }
 
@@ -128,7 +126,7 @@ button.btn {
     background-color: black;
     color: #fff;
     min-height: 40px;
-    width: 200px;
+    width: 180px;
     padding: 5px;
     text-align: center;
 }

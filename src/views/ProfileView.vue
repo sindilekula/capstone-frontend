@@ -63,7 +63,7 @@
             <p>ADDRESS:<span class="user ms-2">{{ user.address }}</span></p>
           </div>
           <div class="col-lg-6">
-            <p>EMAIL:<span class="ms-2">{{ user.email}}</span></p>
+            <p>EMAIL:<span class="user ms-2">{{ user.email }}</span></p>
             <p>PHONE NUMBER:<span class="user ms-2">{{ user.phone }}</span></p>
           </div>
           <div class="col-lg-12">

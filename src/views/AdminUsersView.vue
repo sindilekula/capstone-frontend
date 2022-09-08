@@ -121,6 +121,7 @@ export default {
 table {
     width: 1450px;
     padding: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .admin {
@@ -130,8 +131,9 @@ table {
     align-items: flex-start;
 }
 th {
-      border: solid 1px white;
-      color: black;
+    border: solid 1px white;
+    background-color: #04bcff;
+    color: black;
 }
 td {
     border: solid 1px white;

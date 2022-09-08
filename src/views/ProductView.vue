@@ -247,9 +247,12 @@ select {
 }
 @media screen and (max-width: 483px) {
   input {
-    min-width: 300px;
+    min-width: 270px;
     padding: 10px;
   }
+  select {
+  width: 270px;
+}
 }
 @media screen and (max-width: 600px) {
   .buttons {

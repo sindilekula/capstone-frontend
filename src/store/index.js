@@ -143,6 +143,7 @@ export default createStore({
           console.log(data);
         });
         alert("Registration was successful");
+        router.push("/login");
     },
 
     // GET ALL PRODUCTS
@@ -266,19 +267,21 @@ export default createStore({
 
     
     // UPDATE PRODUCT USING ID
-    updateProduct: async (context, product) => {
+    updateProduct: async (context, payload) => {
       const {
         name,
+        image,
         category,
         price,
         color,
         size,
         description,
-      } = product;
-      fetch("https://capstone-sindile.herokuapp.com/products/" + id, {
+      } = payload;
+      fetch(`${api}/products/${payload.id}`, {
         method: "PUT",
         body: JSON.stringify({
           name: name,
+          image: image,
           category: category,
           price: price,
           color: color,
@@ -290,7 +293,7 @@ export default createStore({
         },
       })
       .then((response) => response.json())
-      .then((product) => context.commit("setProduct", product));
+      .then((data) => context.commit("setProduct", data));
     },
 
     // addingProduct: async (context, product) => {
@@ -329,9 +332,8 @@ export default createStore({
       })
       .then((response) => response.json())
       .then(() => context.dispatch("getUser"));
-      router.push({
-        name: "home",
-      });
+      alert("USER SUCCEESSFULLY DELETED");
+      router.push("/");
     },
 
     // UPDATE USER BY ID
