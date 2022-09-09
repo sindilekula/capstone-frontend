@@ -6,7 +6,7 @@
                 <div class="box">
                     <div class="content">
                         <div class="cards" v-for="product in cartproducts" :key="product.id">
-                            <img :src="product.image" class="mb-2" alt="food" />
+                            <img :src="product.image" class="img-fluid mb-2" alt="food" />
                             <div class="cart-content">
                                 <h3 class="ms-5">{{ product.brand }}</h3>
                                 <p class="d-flex justify-content- gap-3">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="">
-                        <button type="submit" class="btn btn-lg my-2" @click="deleteCart(product)">Checkout</button>
+                        <button type="submit" class="btn btn-lg my-2" @click="deleteCart(products)">Checkout</button>
                     </div>
                 </div>
             </div>
@@ -59,8 +59,8 @@ export default {
         deleteFromCart(id) {
             return this.$store.dispatch("deleteFromCart", id);
         },
-         deleteCart(id) {
-            return this.$store.dispatch("deleteCart", id);
+         deleteCart(products) {
+            return this.$store.dispatch("deleteCart", products);
         },
     },
     computed: {
