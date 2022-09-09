@@ -53,8 +53,7 @@
                                                 >
                                             </div>
                                             <div class="address form-floating">
-                                                <input
-                                                    type="text" class="form-control mb-2" id="floatingAddress" placeholder="ADDRESS" v-model="user.address"/>
+                                                <input type="text" class="form-control mb-2" id="floatingAddress" placeholder="ADDRESS" v-model="user.address"/>
                                                 <label for="floatingAddress">ADDRESS</label>
                                             </div>
                                             <div class="phone form-floating">
